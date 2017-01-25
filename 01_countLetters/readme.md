@@ -14,3 +14,15 @@ convert all to lowercase. Ignore whitespace and anything not a-z
 "The quick brown fox jumps over the lazy dog and the sleeping cat early in the day."
 
 [Source](https://www.reddit.com/r/dailyprogrammer/comments/2mkh5g/weekly_17_mini_challenges/cm51y55)
+
+function countLetters(string) {
+  var obj = {};
+  for (var i = 0; i < string.length; i++) {
+    if (obj[string[i]]) {
+      obj[string[i]]++;
+    } else if (string[i] != " "){
+      obj[string[i]] = 1;
+    }
+  }
+  return obj;
+}
