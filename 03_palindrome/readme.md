@@ -11,3 +11,15 @@ A string, typically a word.
 ##Output
 
 Boolean. True if the string is a palindrome.
+
+
+function isPalindrome(string) {
+  var halfway = Math.Floor(string.length / 2);
+  for (var i = 0; i < halfway; i++) {
+    if (string[i] != string[string.length - (i + 1)])
+    {
+      return false;
+    }
+  }
+  return true;
+}

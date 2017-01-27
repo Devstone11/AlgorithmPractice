@@ -9,3 +9,15 @@ An array of strings (e.g ["truck", "sidewalk", "book"])
 ## Output
 
 An object with the key of the longest string and a value of the length of the string (e.g. { sidewalk: 8 })
+
+function longest(arr) {
+  var longest = 0;
+  var result = {};
+  arr.forEach(function(word) {
+    if (word.length > longest) {
+      longest = word.length;
+      result = {word: word.length};
+    }
+  })
+  return result;
+}
