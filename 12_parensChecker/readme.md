@@ -33,3 +33,31 @@ cd into this folder (12_parensChecker)
 `npm install -g mocha`
 
 Run the command `mocha`
+
+function parensChecker(string) {
+  //split string into array
+  //if the first element is not '(', return false. Otherwise,
+  //splice that opening paren.
+  //iterate through until it finds a closing paren.
+  //splice that closing paren.
+  //if there is stuff left in the array, do it again.
+  var arr = string.split('');
+  return arrayHandler(arr);
+}
+
+function arrayHandler(arr) {
+  if (arr.length === 0) {
+    return true;
+  } else {
+    if (arr[0] !== '(') {
+      return false;
+    }
+    arr.splice(0,1);
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] === ')') {
+        arr.splice(i, 1);
+      }
+    }
+    return arrayHandler(arr);
+  }
+}

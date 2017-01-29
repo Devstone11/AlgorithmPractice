@@ -15,3 +15,14 @@ Two arrays (e.g [ "cat", "dog", "fish", "zebra" ] and [ "lion", "aardvark", "gor
 ## Output
 
 A new array with all items in alphabetical order. (e.g. [ "aardvark", "cat", "dog", "fish", "gorilla", "lion", "zebra" ])
+
+function combineAndSort(arr1, arr2) {
+  return arr2.reduce(function(prev, curr) {
+      prev.push(curr);
+      return prev;
+    }, arr1).sort();
+  arr2.forEach(function(word) {
+    arr1.push(word);
+  })
+  return arr1.sort();
+}

@@ -20,18 +20,25 @@ var square5 =
 
               [3, 3, 8, 2, 4]]
 
-function diagonalSum(square) {
-  var sum = 0
-  var colCount = 0
-  // Iterate through each row
-  for (var row = 0; row < square.length; row++) {
-    // Find the element at colCount in the current row
-    sum += square[row][colCount]
-    // Move to the next column to the right
-    colCount++
-  }
-  return sum
+// function diagonalSum(square) {
+//   var sum = 0
+//   var colCount = 0
+//   // Iterate through each row
+//   for (var row = 0; row < square.length; row++) {
+//     // Find the element at colCount in the current row
+//     sum += square[row][colCount]
+//     // Move to the next column to the right
+//     colCount++
+//   }
+//   return sum
+// }
+//
+// console.log(diagonalSum(square4))
+// console.log(diagonalSum(square5))
+
+function sumDiagonal(square) {
+  return square.reduce((prev, curr, i) => prev += curr[i], 0)
 }
 
-console.log(diagonalSum(square4))
-console.log(diagonalSum(square5))
+console.log(sumDiagonal(square4));
+console.log(sumDiagonal(square5));

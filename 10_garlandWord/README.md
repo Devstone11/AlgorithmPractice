@@ -17,3 +17,17 @@ garland('hotshots') //4
 garland('abracadabra') //4
 garland('couscous') //4
 ```
+
+function garland(word) {
+  var degree = 0;
+  for (i = 1; i < word.length; i++) {
+    if (word.substring(0,i) === word.substring(word.length - (i+1), word.length - 1)) {
+      degree = i;
+    }
+  }
+  return degree;
+}
+
+console.log(garland('programmer'));
+console.log(garland('ceramic'));
+console.log(garland('alfalfa'));

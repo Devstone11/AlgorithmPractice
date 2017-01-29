@@ -34,3 +34,15 @@ The sum of the diagonal. (First value in the first array, plus second value in s
 diagonalSum(square4) // => 4
 
 diagonalSum(square5) // => 19
+
+
+function sumDiagonal(square) {
+  return square.reduce(function(prev, curr, arr, i) {
+      return prev += curr[i];
+    }, 0)
+  <!-- var sum = 0;
+  for (var i = 0; i < square.length; i++) {
+    sum += square[i][i];
+  }
+  return sum; -->
+}

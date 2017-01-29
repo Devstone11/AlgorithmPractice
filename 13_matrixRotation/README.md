@@ -42,3 +42,26 @@ var dimensions2 = "3x3";
 var result2 = [[99, 12, 29], [79, 60, 62], [12, 31, 8]];
 var newDimensions2 = "3x3";
 ```
+
+function dimensions(matrix) {
+  return (matrix.length + "x" + matrix[0].length).toString();
+}
+
+[[a, b, c],
+[d, e, f]] =>
+
+[[d, a],
+[e, b],
+f, c]]
+
+function rotate(matrix) {
+  var result = [];
+  for (var i = 0; i < matrix[0]; i++) {
+    result.push([]);
+  }
+  for (var i = matrix.length -1; i >= 0; i--) {
+    for (var j = 0; j < matrix[0]; j++) {
+      result[j].push(matrix[i][j]);
+    }
+  }
+}

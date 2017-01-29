@@ -29,12 +29,25 @@ var matrix1 = [[44, 23],
 var matrix2 = [[29,62,8], [12,60, 31], [99,79,12]];
 // var result2 = [[99, 12, 29], [79, 60, 62], [12, 31, 8]];
 
+// function rotate(matrix) {
+//   let result = [];
+//   matrix[0].forEach(arr => result.push([]));
+//   for (var i = 0; i < matrix.length; i++) {
+//     for (var j = 0; j < matrix[i].length; j++) {
+//       result[j][matrix.length - (i+1)] = matrix[i][j]
+//     }
+//   }
+//   return result;
+// }
+
 function rotate(matrix) {
-  let result = [];
-  matrix[0].forEach(arr => result.push([]));
-  for (var i = 0; i < matrix.length; i++) {
-    for (var j = 0; j < matrix[i].length; j++) {
-      result[j][matrix.length - (i+1)] = matrix[i][j]
+  var result = [];
+  for (var i = 0; i < matrix[0].length; i++) {
+    result.push([]);
+  }
+  for (var i = matrix.length -1; i >= 0; i--) {
+    for (var j = 0; j < matrix[0].length; j++) {
+      result[j].push(matrix[i][j]);
     }
   }
   return result;
