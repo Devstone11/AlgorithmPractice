@@ -44,3 +44,23 @@ sumDigits(667) // -> 1
 | 1    | 19    | 2      |
 | 2    | 10    | 2      |
 | 3    | 1     | 1      |
+
+
+
+function sumDigits(integer) {
+  if (integer)
+
+}
+
+function sum(integer) {
+  if (Math.floor(integer / 10) === 0) {
+    return integer;
+  } else {
+    var sum = 0;
+    while (integer > 0) {
+      sum += integer % 10;
+      integer = Math.floor(integer / 10);
+    }
+    return sumDigits(sum);
+  }
+}

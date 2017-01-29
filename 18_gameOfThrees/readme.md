@@ -43,3 +43,20 @@ gameOfThrees(31337357)
 ```
 
 [Source](https://www.reddit.com/r/dailyprogrammer/comments/3r7wxz/20151102_challenge_239_easy_a_game_of_threes/)
+
+function gameOfThrees(number) {
+  if (number === 1) {
+    console.log(number);
+  } else {
+    if (number % 3 === 0) {
+      console.log(number + " " + 0);
+      gameOfThrees(number);
+    } else if (number + 1 % 3 === 0) {
+      console.log(number + " " + 1);
+      gameOfThrees(number + 1);
+    } else if (number - 1 % 3 === 0) {
+      console.log(number + " " + -1);
+      gameOfThrees(number - 1);
+    }
+  }
+}

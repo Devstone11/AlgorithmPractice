@@ -19,3 +19,9 @@ Function that adds the given parameter to the initial base number.
 
 # Hints
 The add function will be a higher order function. It will need to return a function.
+
+function curry(a) {
+  return function(b) {
+    return a + b;
+  }
+}

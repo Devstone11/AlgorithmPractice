@@ -47,3 +47,32 @@ If an operator is input, get the last 2 values and operate on them.
 console.log(calculateRPN('5 1 2 + 4 × + 3 −')) //14
 console.log(calculateRPN('1 2 + 4 5 6 8 * - + +')) //-36
 ```
+[1]
+[1, 2]
+[3]
+[3,4,5,6,8]
+[3,4,5,48]
+[3,4,-43]
+[3,-39]
+[-36]
+
+function evaluate(string) {
+  var arr = string.split(' ');
+  var tempArr = [];
+  for (var i = 0; i < arr.length; i++) {
+    var last = tempArr[tempArr.length -1];
+    var secondLast = tempArr[tempArr.length -2];
+    if (arr[i] == '+') {
+      tempArr.splice(tempArr.length - 2, 2, last + secondLast);
+    } else if (arr[i] == '-') {
+      tempArr.splice(tempArr.length - 2, 2, secondLast - last);
+    } else if (arr[i] == '*') {
+      tempArr.splice(tempArr.length - 2, 2, last * secondLast);
+    } else if (arr[i] == '/') {
+      tempArr.splice(tempArr.length - 2, 2, secondLast / last);
+    } else {
+      tempArr.push(parseInt(arr[i]));
+    }
+  }
+  return tempArr[0];
+}

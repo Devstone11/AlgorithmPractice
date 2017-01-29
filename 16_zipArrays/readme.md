@@ -18,3 +18,17 @@ zipArrays([1,2,3], [4,5,6]);
 ```sh
 [1,4,2,5,3,6]
 ```
+
+function zipArrays(arr1, arr2) {
+  var result = [];
+  for (var i = 0; i < arr1.length; i++) {
+    result.push(arr1[i]);
+    if (arr2[0]) {
+      result.push(arr2.splice(0, 1))
+    }
+  }
+  if (arr2.length > 0) {
+    result.concat(arr2);
+  }
+  return result;
+}

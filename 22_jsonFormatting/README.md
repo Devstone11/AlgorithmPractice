@@ -66,3 +66,31 @@ to:
     ]
 }
 ```
+
+function formatBooks(json) {
+  results = {"books": []};
+  json.books.forEach(function(book) {
+    index = -1;
+    for (var i = 0; i < results.books.length; i++) {
+      if (results.books[i].name === book.name) {
+        index = i;
+      }
+    }
+    if (index >= 0) {
+      results.books[index].author.push({
+        "id": book.author_id,
+        "name": book.author_name
+      })
+    } else {
+      results.books.push({
+        "id": book.id,
+        "name": book.name,
+        "author": [{
+          "id": book.author_id,
+          "name": book.author_name
+        }]
+      });
+    }
+  })
+  return results;
+}

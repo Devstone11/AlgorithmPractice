@@ -1,8 +1,8 @@
-function add(a) {
-  return function(b) {
-    return a + b
-  }
-}
+// function add(a) {
+//   return function(b) {
+//     return a + b
+//   }
+// }
 
 console.log(
   add(1)(1),   // returns 2
@@ -10,3 +10,9 @@ console.log(
   add(100)(5), // returns 105
   add(40)(2) // returns 42
 )
+
+function add(a) {
+  return function(b) {
+    return a + b;
+  }
+}

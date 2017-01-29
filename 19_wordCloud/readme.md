@@ -50,3 +50,26 @@ Your mission (should you choose to accept it) is to turn that data into an objec
 # Note
 
 The words appear in a mix of uppercase and lowercase letters, but the resulting word-cloud should be all lowercase.
+
+function wordCloud(json) {
+  var result = {};
+  for (speaker in json) {
+    speaker.forEach(function(quote) {
+      var quoteArr = quote.split(' ');
+      quoteArr.forEach(function(word) {
+        if (result[word.toLowerCase()]) {
+          result[word.toLowerCase()].count++;
+          if (result[word.toLowerCase()].people.IndexOf(speaker) < 0) {
+            result[word.toLowerCase()].people.push(speaker);
+          }
+        } else {
+          result[word.toLowerCase()] = {
+            count: 1,
+            people: speaker
+          }
+        }
+      })
+    })
+  }
+  return result;
+}
