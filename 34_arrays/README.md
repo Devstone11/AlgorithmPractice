@@ -47,3 +47,19 @@ function array() {
   return newArray
 }
 ```
+
+function array() {
+  var newArray = {}
+  newArray.length = 0
+  newArray.push = function (value) {
+    newArray[length] = value;
+    length ++;
+  }
+  newArray.pop = function () {
+    var result = newArray[newArray.length - 1];
+    delete newArray[newArray.length - 1];
+    newArray.length--;
+    return result;
+  }
+  return newArray
+}

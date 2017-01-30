@@ -35,6 +35,18 @@ var states = [
   {id: 10, name: "South Carolina"}
 ]
 
+function join (left, right, foreignKey, primaryKey, newKey) {
+  left.forEach(function(item) {
+    for (var i = 0; i < right.length; i++) {
+      if (right[i][primaryKey] === item[foreignKey]) {
+        item[newKey] = right[i];
+        delete item[foreignKey];
+      }
+    }
+  })
+  return left;
+}
+
 var result = join(cities, states, "state_id", "id", "state")
 console.log(result) /* ->
 [  
@@ -112,3 +124,8 @@ function join (left, right, foreignKey, primaryKey, newKey) {
 *   Do a join on more than 2 tables.
 *   Write tests to ensure your function covers all of the bases.
 *   Write a different type of join: Inner, Outer, Left, Right, Full
+
+function join (left, right, foreignKey, primaryKey, newKey) {
+  result = [];
+
+}

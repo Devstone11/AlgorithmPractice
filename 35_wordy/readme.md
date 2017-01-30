@@ -58,3 +58,24 @@ What is 4 plus 3 times 2?
 
 
 [Source](http://exercism.io/exercises/javascript/wordy/readme)
+
+function translate(wordProblem) {
+  var problemArr = wordProblem.split(' ');
+  var filtered = problemArr.filter(function(word) {
+      return word !== "What" && word !== "is";
+  });
+  var mapped = filtered.map(function(element) {
+      if (element === 'plus') {
+        return '+';
+      } else if (element === 'minus') {
+        return '-';
+      } else if (element === 'times') {
+        return '*';
+      } else if (element === 'divided by') {
+        return '/';
+      } else {
+        return element
+      }
+  });
+  return parseInt(mapped.join(' '));
+}

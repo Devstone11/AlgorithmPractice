@@ -27,3 +27,15 @@ var steps = [
 Taking edge weights into consideration, find the shortest path with the lowest weight. For example, even though the path `1 > 5 > 9 > 8 > 6 > 3` is shorter than `1 > 5 > 2 > 7 > 8 > 6 > 3`, the second path has a lower weight.
 
 ![graph](graph-with-weights.jpg)
+
+function shortestPath(start, end) {
+  for (var i = 0; i < steps.length; i++) {
+    if (steps[i].from === start) {
+      if (steps[i].to === end) {
+        return end;
+      } else {
+        return start + ' > ' + shortestPath(steps[i].to, end);
+      }
+    }
+  }
+}

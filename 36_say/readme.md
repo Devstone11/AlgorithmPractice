@@ -71,5 +71,25 @@ Use and (correctly) when spelling out the number in English:
 1002 becomes "one thousand and two".
 1323 becomes "one thousand three hundred and twenty-three".
 
-
 [Source](http://exercism.io/exercises/javascript/say/readme)
+
+function words(number) {
+  var response = "";
+  if (Math.floor(number / 1000000000) > 0) {
+    response += (Math.floor(number / 1000000000)).toString() + 'billion ';
+    number = number % 1000000000;
+  }
+  if (Math.floor(number / 1000000) > 0) {
+    response += (Math.floor(number / 1000000)).toString() + 'million ';
+    number = number % 1000000;
+  }
+  if (Math.floor(number / 1000) > 0) {
+    response += (Math.floor(number / 1000)).toString() + 'thousand ';
+    number = number % 1000;
+  }
+  if (Math.floor(number / 100) > 0) {
+    response += (Math.floor(number / 100)).toString() + 'hundred ';
+    number = number % 100;
+  }
+  return response;
+}

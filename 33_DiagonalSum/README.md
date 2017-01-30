@@ -20,3 +20,9 @@ Stretch:
 Test drive it!
 
 Write tests to ensure your function covers all of the bases
+
+function diagonals(matrix) {
+  return matrix.reduce(function(prev, curr, i) {
+    return prev + curr[i] + curr[curr.length-(i+1)];
+  }, 0)
+}

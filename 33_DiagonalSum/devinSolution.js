@@ -20,8 +20,14 @@ var diagonals = [
 // returns -> 30 // 1 + 5 + 9 + 3 + 5 + 7
 // console.log(1+5+9+4+4+6+8+1);
 
-function diagonalSum(array) {
-  return array.reduce((prev, curr, i, arr) => {return prev + arr[i][i] + arr[i][arr.length - (i+1)]}, 0)
+// function diagonalSum(array) {
+//   return array.reduce((prev, curr, i, arr) => {return prev + arr[i][i] + arr[i][arr.length - (i+1)]}, 0)
+// }
+
+// console.log(diagonalSum(diagonals));
+
+function diagonalsSum(matrix) {
+  return matrix.reduce((prev, curr, i) =>  prev + curr[i] + curr[curr.length-(i+1)], 0)
 }
 
-console.log(diagonalSum(diagonals));
+console.log(diagonalsSum(diagonals));
